@@ -1,0 +1,80 @@
+---
+pipeline:
+  build-docker:
+    when:
+      branch: [development, stage, master]
+      event: [pull_request, push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/drone-plugin-cgl-docker:3-stable
+    repo: APP_NAME_GOES_HERE
+    env: dev
+    tags: "${DRONE_COMMIT_SHA:0:7}"
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
+    skip_existing: true
+    xray_full_results: true
+
+  plan-on-push-dev:
+    when:
+      branch: [development]
+      event: [push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/captain:1.13.3-rc1
+    env: dev
+    version: "${DRONE_COMMIT_SHA:0:7}"
+    run_apply: false
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
+
+  deploy-on-push-dev:
+    when:
+      branch: [development]
+      event: [push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/captain:1.13.3-rc1
+    env: dev
+    version: "${DRONE_COMMIT_SHA:0:7}"
+    run_apply: true
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
+
+  plan-on-push-stage:
+    when:
+      branch: [stage]
+      event: [push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/captain:1.13.3-rc1
+    env: stage
+    version: "${DRONE_COMMIT_SHA:0:7}"
+    run_apply: false
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
+
+  deploy-on-push-stage:
+    when:
+      branch: [stage]
+      event: [push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/captain:1.13.3-rc1
+    env: stage
+    version: "${DRONE_COMMIT_SHA:0:7}"
+    run_apply: true
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
+
+  plan-on-push-prod:
+    when:
+      branch: [master]
+      event: [push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/captain:1.13.3-rc1
+    env: prod
+    version: "${DRONE_COMMIT_SHA:0:7}"
+    run_apply: false
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
+
+  deploy-on-push-prod:
+    when:
+      branch: [master]
+      event: [push, tag]
+    image: docker-utilities.binrepo.cglcloud.in/captain:1.13.3-rc1
+    env: prod
+    version: "${DRONE_COMMIT_SHA:0:7}"
+    run_apply: true
+    captain_file: .captain.yml
+    dockerfile: Dockerfile
