@@ -2,11 +2,9 @@
 
 ## usage
 
-This is a template to build a GraphQL service that can be added to an Apollo Federation Gateway like the one created by the anh-domain-api team (found here: https://git.cglcloud.com/anh-domain-api/cda).
+This is a template to build a GraphQL service that can be added to an Apollo Federation Gateway.
 
 ## make it your own
-
-First search the application for TEAM_NAME_GOES_HERE and replace it with your team name and APP_NAME_GOES_HERE and replace it with your application name.
 
 For the most part all development work will then take place inside the /src/api/schema folder. Here you will define the GraphQL types and the corresponding resolvers to persist that data.
 
@@ -20,6 +18,3 @@ This has been setup a very simple schema and resolver pairing. There is one scal
 
 This implementation is set up already with a visualizer of the graph. By navigating to [url of app]/public/visualizer.html the graph will be introspected on page load and generate a graph of the current state of the graph.
 
-## the graph family
-
-If you would like to combine your graph with the apollo federation gateway created by the anh-domain-api team (found here: https://connecteddataapi.dev.cglcloud.in/) set up a meeting with us and we can discuss how your graph fits in. You can send us an email at DOMAIN-API-ALL@exch.cargill.com.
