@@ -71,11 +71,15 @@ npm run dev
 **Yarn runs on NPM you cannot both at the same time.**
 
 
-## usage
+# Usage
 
-This is a template to build a GraphQL service that can be added to an Apollo Federation Gateway.
+First off, **what is GraphQL?** GraphQL as defined by GraphQL.org is _"a query language for your API"_. This doesn't clear things up in my opinion. Think of GraphQL as **an alternative to REST** with some added features. GraphQL, much like REST, is **not actually querying a database.** It is the vehicle with which a **Front-End application talks to a Back-End application.** Once that message finds its way to the **Back-End** it is up to the that application to **send a response back.** To get the information for that response is up to the developer. It might query a database. It might have information hard-coded in (that's how I mostly did it here for simplicity sake). It might call on a REST API and send _that_ information the client (which might seem backwards but the world might never be RESTless which is probably a good thing). It might do all of the above. **It is just another tool in the tech tool belt that can make things easier.** To find more information about GraphQL see here: https://GraphQL.org/.
+
+This is a template to build an Apollo GraphQL Gateway. This gateway can be pointed at **any number of compatible GraphQL APIs** and they will be **combined together** into **one** _happy_ **graph.** To see which implementations of GraphQL are compatible see here: https://www.apollographql.com/docs/federation/other-servers/. These subgraphs can point from one domain to another **passing** around **necessary primary keys** and other information to **establish relationships.** Using this implementation, you will have the **benefits of a micro-service architecture** while still having **one central URL for all data exchange** that has **domain relations baked right in.** You can find information about Apollo Federation here: https://www.apolloGraphQL.com/docs/federation/.
 
 ## make it your own
+
+I have preconfigured eslint, typescript, and prettier to behave how I like. These keep coding patterns consistent across the project and will throw errors if you make different stylistic choices. Feel free to use it. Feel free to modify it. Feel free to throw it away completely. Make it your own! Have fun with it! This is your project now.
 
 For the most part all development work will then take place inside the /src/api/schema folder. Here you will define the GraphQL types and the corresponding resolvers to persist that data.
 
@@ -88,6 +92,4 @@ This has been setup a very simple schema and resolver pairing. There is one scal
 ## a picture is worth a thousand words
 
 This implementation is set up already with a visualizer of the graph. By navigating to [url of app]/public/visualizer.html the graph will be introspected on page load and generate a graph of the current state of the graph.
-
-
 
