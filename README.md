@@ -1,4 +1,4 @@
-# apollo-grapgql-service-template
+# service-apollo-template
 
 ## usage
 
