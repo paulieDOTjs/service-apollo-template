@@ -1,4 +1,75 @@
-# service-apollo-template
+# Getting Started
+
+### Installing Node, NPM, and Yarn and starting the server.
+
+This is a **node.js** project. **Node v14 and NPM will be required.**
+
+### Installing Node
+
+To check to see if you have Node installed open a terminal and run:
+
+```
+node -v
+```
+
+If you get an error or the version number is less than 14 (don't worry the error doesn't hurt your computer it's just your computer saying I don't know what you mean) you will have to install it or update it. See more here: https://nodejs.org/en/
+
+### Installing NPM
+
+To check for NPM open a terminal and run:
+
+```
+npm -v
+```
+
+Again, if you get an error (don't worry the error doesn't hurt your computer it's just your computer saying I don't know what you mean) you will have to install it.
+
+You can see how to download NPM here: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
+### Bonus installations: NVM and Homebrew
+
+**If you plan on doing a lot of Node development** I would recommend **Node Version Manager (NVM).** And use NVM to install NPM. See more here: https://github.com/nvm-sh/nvm
+
+**If you are on Mac or Linux** _and_ you want to do **a lot of Node development** you can install NVM using **Homebrew.** Read more here: https://brew.sh/ and here: https://formulae.brew.sh/formula/nvm#default.
+
+### Installing Yarn
+
+**I also chose to use Yarn, this is optional.** Yarn is basically the same as NPM but faster. To check to see if you have Node installed open a terminal and run:
+
+```
+yarn -v
+```
+
+Again, if you get an error (don't worry the error doesn't hurt your computer it's just your computer saying I don't know what you mean) you will have to install it. **Yarn requires Node and NPM make sure they are installed** _(see above)_. Once Node and NPM are installed you can install Yarn following the instructions here: https://classic.yarnpkg.com/en/docs/install/.
+
+### Starting the server
+
+**To start the project with Yarn** navigate your terminal to this directory and run:
+
+```
+yarn install
+```
+
+once that finishes installing (should take a few minutes) you should then run:
+
+```
+yarn dev
+```
+
+**If you are NOT using Yarn and want to use NPM** delete the yarn.lock file and go into the package.json file. In the _package.json_ file under _"scripts"_ find _"start"_ and change _yarn build && node dist/server.js_ to _npm run build && node dist/server.js_. Once that change is made navigate to this directory in your terminal and run:
+
+```
+npm install
+```
+
+once that finishes installing (should take a few minutes) you should then run:
+
+```
+npm run dev
+```
+
+**Yarn runs on NPM you cannot both at the same time.**
+
 
 ## usage
 
@@ -17,4 +88,6 @@ This has been setup a very simple schema and resolver pairing. There is one scal
 ## a picture is worth a thousand words
 
 This implementation is set up already with a visualizer of the graph. By navigating to [url of app]/public/visualizer.html the graph will be introspected on page load and generate a graph of the current state of the graph.
+
+
 
