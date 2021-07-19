@@ -14,9 +14,9 @@ const port = process.env.PORT || "4000";
 //set port
 app.set("port", port);
 //use a logger in dev environment
-app.use(logger("dev"));
+app.use(logger("dev") as express.RequestHandler);
 //send json when requested.
-app.use(express.json());
+app.use(express.json() as express.RequestHandler);
 
 // when going to /public serve the public folder
 // this will serve up the cargill favicon and the visualizer
