@@ -19,7 +19,6 @@ app.use(logger("dev") as express.RequestHandler);
 app.use(express.json() as express.RequestHandler);
 
 // when going to /public serve the public folder
-// this will serve up the cargill favicon and the visualizer
 app.use("/public", express.static(path.join(__dirname, "../public")));
 
 //This is just for health checker
