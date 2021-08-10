@@ -93,3 +93,6 @@ This has been setup a very simple schema and resolver pairing. There is one scal
 
 This implementation is set up already with a visualizer of the graph. By navigating to [url of app]/public/visualizer.html the graph will be introspected on page load and generate a graph of the current state of the graph.
 
+## welcome to the family
+
+This repo goes hand in hand with my repo https://github.com/paulieDOTjs/gateway-apollo-template. They are built to intermingle and mesh into one big happy Graph.
