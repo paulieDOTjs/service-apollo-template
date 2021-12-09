@@ -1,5 +1,3 @@
-import { ApolloError } from "apollo-server-express";
-import axios from "axios";
 import { promiseArgs } from "./promisesDef";
 
 export const promisesResolve = {
