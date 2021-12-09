@@ -22,7 +22,6 @@
         }).then((response) => response.json());
       }
 
-      // Render <Voyager />
       GraphQLVoyager.init(document.getElementById("voyager"), {
         introspection: introspectionProvider,
       });

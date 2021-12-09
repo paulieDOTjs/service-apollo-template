@@ -7,5 +7,4 @@ export enum NODE_ENV {
   PROD = "production",
 }
 
-//get current node environment
 export const currentEnv = process.env.NODE_ENV;
