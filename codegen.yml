@@ -1,0 +1,16 @@
+overwrite: true
+schema: "http://localhost:4000"
+documents: null
+generates:
+  src/models/graphql.ts:
+    config:
+      mappers:
+        Book: ./BookModel#BookModel
+        Author: ./BookModel#AuthorModel
+      federation: true
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
