@@ -15,7 +15,7 @@
     "lib": ["es2018", "esnext.asynciterable"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/models/graphql.ts"],
+  "exclude": ["node_modules"],
   "types": [],
   "typeRoots": []
 }

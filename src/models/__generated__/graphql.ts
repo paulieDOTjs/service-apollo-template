@@ -1,5 +1,6 @@
+/* eslint-disable */
 import { GraphQLResolveInfo } from 'graphql';
-import { BookModel, AuthorModel } from './BookModel';
+import { BookModel, AuthorModel } from '../BookModel';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -13,6 +14,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  _FieldSet: any;
 };
 
 export type Author = {
@@ -115,28 +117,22 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Author: ResolverTypeWrapper<AuthorModel>;
-  Book: ResolverTypeWrapper<BookModel>;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
-  Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  _Service: ResolverTypeWrapper<_Service>;
+  Book: ResolverTypeWrapper<BookModel>;
+  Query: ResolverTypeWrapper<{}>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Author: AuthorModel;
-  Book: BookModel;
-  Boolean: Scalars['Boolean'];
   Int: Scalars['Int'];
-  Query: {};
   String: Scalars['String'];
-  _Service: _Service;
+  Book: BookModel;
+  Query: {};
+  Boolean: Scalars['Boolean'];
 };
-
-export type ExtendsDirectiveArgs = { };
-
-export type ExtendsDirectiveResolver<Result, Parent, ContextType = any, Args = ExtendsDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type AuthorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = {
   books?: Resolver<Maybe<Array<Maybe<ResolversTypes['Book']>>>, ParentType, ContextType>;
@@ -153,23 +149,13 @@ export type BookResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  _service?: Resolver<ResolversTypes['_Service'], ParentType, ContextType>;
   authors?: Resolver<Maybe<Array<Maybe<ResolversTypes['Author']>>>, ParentType, ContextType, RequireFields<QueryAuthorsArgs, never>>;
   books?: Resolver<Maybe<Array<Maybe<ResolversTypes['Book']>>>, ParentType, ContextType, RequireFields<QueryBooksArgs, never>>;
-};
-
-export type _ServiceResolvers<ContextType = any, ParentType extends ResolversParentTypes['_Service'] = ResolversParentTypes['_Service']> = {
-  sdl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = any> = {
   Author?: AuthorResolvers<ContextType>;
   Book?: BookResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
-  _Service?: _ServiceResolvers<ContextType>;
 };
 
-export type DirectiveResolvers<ContextType = any> = {
-  extends?: ExtendsDirectiveResolver<any, any, ContextType>;
-};

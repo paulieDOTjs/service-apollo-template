@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "sort-imports-es6-autofix"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -14,9 +14,17 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "prettier/prettier": "warn",
+    "prettier/prettier": ["warn", { "endOfLine": "auto" }],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "no-console": ["warn", { "allow": ["error"] }]
+    "no-console": ["warn", { "allow": ["error"] }],
+    "sort-imports-es6-autofix/sort-imports-es6": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+      }
+    ]
   }
 }

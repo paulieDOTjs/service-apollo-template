@@ -1,9 +1,10 @@
-import { apollo } from "./apollo";
-import dotenv from "dotenv";
 /* eslint-disable no-console */
+
+import dotenv from "dotenv";
 import express from "express";
 import logger from "morgan";
 import path from "path";
+import { apollo } from "./apollo";
 
 dotenv.config();
 

@@ -1,6 +1,5 @@
+import { Resolvers } from "../../models/__generated__/graphql";
 import { authors, books } from "../../models/booksDB";
-
-import { Resolvers } from "../../models/graphql";
 
 export const authorsResolve: Omit<Resolvers, "_Service"> = {
   Query: {
